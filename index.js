@@ -4,7 +4,7 @@ const entry = "https://app.triplewhale.com/signin";
 const forceShop =
   "https://app.triplewhale.com/summary?shop-id=my-obvi.myshopify.com";
 const destination =
-  "https://app.triplewhale.com/willy/sOPMfwMa3yytlFrxEPAi?shop-id=my-obvi.myshopify.com";
+  "https://app.triplewhale.com/willy/M1lpTSEUm8A3ienL7VJJ?shop-id=my-obvi.myshopify.com";
 
 const username = "michael@triplewhale.com";
 const usernameInput = "#login-email-input";
