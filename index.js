@@ -2,8 +2,9 @@ const puppeteer = require("puppeteer");
 
 const entry = "https://app.triplewhale.com/signin";
 const forceShop =
-  "https://app.triplewhale.com/summary?shop-id=madisonbraids.myshopify.com";
-const destination = "https://app.triplewhale.com/willy/pTCzgg8BFMLWwWnCns6j";
+  "https://app.triplewhale.com/summary?shop-id=my-obvi.myshopify.com";
+const destination =
+  "https://app.triplewhale.com/willy/sOPMfwMa3yytlFrxEPAi?shop-id=my-obvi.myshopify.com";
 
 const username = "michael@triplewhale.com";
 const usernameInput = "#login-email-input";
@@ -51,7 +52,7 @@ const elementToScreenshot = ".willy-dashboard-wrapper";
   await page.goto(destination);
 
   // wait
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(10000);
 
   // Wait for the selector to appear in page
   const element = await page.$(elementToScreenshot);
