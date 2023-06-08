@@ -1,5 +1,7 @@
 {
+  "type": "module",
   "dependencies": {
+    "chalk": "^5.2.0",
     "puppeteer": "^20.5.0"
   }
 }
