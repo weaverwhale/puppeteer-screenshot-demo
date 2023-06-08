@@ -17,6 +17,12 @@ const loginButton = ".signup-page-footer button";
 
 const elementToScreenshot = ".willy-dashboard-wrapper";
 
+const intercomId = "#intercom-container";
+const intercomCss = "#intercom-css-container";
+const rightNav = ".lighthouse-wrapper";
+const pageHeader = "#app-scrollable-wrapper > .top-0";
+const leftNav = "#AppFrameNav";
+
 const log = console.log;
 
 // Async IIFE
@@ -68,6 +74,14 @@ const log = console.log;
   } catch (error) {
     log(chalk.red("network idle timeout - proceeding with screenshot anyway"));
   }
+
+  // hide intercom
+  await page.$eval(intercomId, (el) => el.remove());
+  await page.$eval(intercomCss, (el) => el.remove());
+  await page.$eval(rightNav, (el) => el.remove());
+  await page.$eval(leftNav, (el) => el.remove());
+  await page.$eval(pageHeader, (el) => el.remove());
+  log(chalk.cyan("intercom, header, and nav hidden"));
 
   // Wait for the selector to appear in page
   const element = await page.$(elementToScreenshot);
