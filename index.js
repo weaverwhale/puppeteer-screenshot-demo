@@ -19,6 +19,7 @@ const elementToScreenshot = ".willy-dashboard-wrapper";
 
 const log = console.log;
 
+// Async IIFE
 (async () => {
   // Create a browser instance
   const browser = await puppeteer.launch({
@@ -61,7 +62,12 @@ const log = console.log;
   log(chalk.blue(`on willy dashboard: ${dashboardId}`));
 
   // wait
-  await page.waitForTimeout(10000);
+  try {
+    log(chalk.green(`Waiting for network idle to take screenshot`));
+    await page.waitForNetworkIdle();
+  } catch (error) {
+    log(chalk.red("network idle timeout - proceeding with screenshot anyway"));
+  }
 
   // Wait for the selector to appear in page
   const element = await page.$(elementToScreenshot);
